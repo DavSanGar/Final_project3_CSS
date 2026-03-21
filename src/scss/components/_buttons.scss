@@ -1,0 +1,9 @@
+@use "../abstracts/mixins" as *;
+
+.button1 {
+  @include button1();
+}
+
+.button2 {
+  @include button2();
+}

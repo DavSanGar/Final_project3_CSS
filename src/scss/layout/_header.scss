@@ -1,0 +1,151 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as *;
+
+.header {
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 120px;
+  box-sizing: border-box;
+  & ul {
+    @include reset-list();
+    & img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .li-text {
+    margin-left: 16px;
+    margin-right: 16px;
+    margin-top: 32px;
+    box-sizing: border-box;
+    & h1 {
+      width: 343px;
+      height: 110px;
+      font-size: 60px;
+      line-height: 0.9;
+    }
+    & p {
+      width: 343px;
+      height: 112px;
+      margin-top: 32px;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: v.$font-secondary;
+    }
+  }
+  .li-button {
+    margin-left: 16px;
+  }
+  @include breakpoint(tablet) {
+    .header {
+      width: 100%;
+      height: 700px;
+    }
+    .ul-header {
+      display: flex;
+      flex-direction: row;
+      height: 700px;
+      width: 100%;
+      align-items: stretch;
+      padding-bottom: 0;
+      & .li-img {
+        min-width: 437px;
+        height: 700px;
+        overflow: hidden;
+        display: flex;
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          box-sizing: border-box;
+          display: block;
+        }
+      }
+      & .li-text {
+        display: flex;
+        flex-direction: column;
+        width: 339px;
+        height: 130px;
+        margin-top: 145px;
+        margin-left: 10px;
+        & h1 {
+          margin-left: -60px;
+        }
+        & p {
+          width: 339px;
+          min-height: 112px;
+          margin-left: -60px;
+          font-weight: 200;
+          font-size: 18px;
+          letter-spacing: -0.2px;
+        }
+      }
+      & .button1 {
+        position: absolute;
+        width: 260px;
+        height: 72px;
+        margin-left: -380px;
+        margin-top: 420px;
+      }
+    }
+  }
+  @include breakpoint(desktop) {
+    .header {
+      width: 100%;
+      height: 800px;
+      box-sizing: border-box;
+    }
+    & .ul-header {
+      display: flex;
+      max-width: 1439px;
+      height: 800px;
+      justify-content: center;
+      background: linear-gradient(
+        to right,
+        v.$color-black 40%,
+        v.$color-white 40%
+      );
+      & .li-img {
+        max-width: 540px;
+        height: 100%;
+        margin-left: 450px;
+        & img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+      & .li-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 246px;
+        & h1 {
+          position: absolute;
+          min-width: 514px;
+          min-height: 116px;
+          font-size: 96px;
+          font-weight: 900;
+          color: v.$color-white;
+          margin-right: 1440px;
+        }
+        & p {
+          margin: 0;
+          width: 350px;
+          height: 160px;
+          font-size: 22px;
+          font-weight: 400;
+          margin-top: 110px;
+          margin-left: -120px;
+        }
+      }
+      & .button1 {
+        margin-left: -440px;
+      }
+    }
+  }
+}
